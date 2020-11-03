@@ -1,5 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <!-- 自定义全局组件使用 -->
+    <example />
   </div>
 </template>
