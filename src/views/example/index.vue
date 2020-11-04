@@ -1,5 +1,7 @@
 <template>
-  <div>测试页面</div>
+  <div>
+    <example />
+  </div>
 </template>
 
 <script>
