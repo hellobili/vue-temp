@@ -5,13 +5,13 @@ import camelCase from 'lodash/camelCase'
 Vue.use(Vuex)
 
 const modules = {}
-const requireModule = require.context('./modules', false, /\.js$/)
+const files = require.context('./modules', false, /\.js$/)
 
-requireModule.keys().forEach(fileName => {
-  const modulesName = camelCase(fileName.replace(/(\.\/|\.js)/g, ''))
-  const moduleConfig = requireModule[fileName].default
+files.keys().forEach(file => {
+  const fileName = camelCase(file.replace(/(\.\/|\.js)/g, ''))
+  const moduleConfig = files(file).default
 
-  modules[modulesName] = {
+  modules[fileName] = {
     namespaced: true,
     ...moduleConfig
   }
