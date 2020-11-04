@@ -1,5 +1,7 @@
 <template>
-  <div>example components</div>
+  <div>
+    <slot>example components</slot>
+  </div>
 </template>
 
 <script>
