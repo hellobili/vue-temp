@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+let routes = [
   {
     path: '/',
     name: 'Home',
@@ -19,6 +19,13 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
+
+const pages = require.context('../views', true, /router\.js$/)
+
+pages.keys().forEach(page => {
+  const tmp = pages(page).default
+  routes = routes.concat(...tmp)
+})
 
 const router = new VueRouter({
   routes
