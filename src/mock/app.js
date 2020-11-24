@@ -5,9 +5,15 @@ const data = Mock.mock({
   name: '@name'
 })
 
-export default Mock.mock(/\/user\/info/, 'get', () => {
-  return {
-    code: '200',
-    data
+export default [
+  {
+    url: '/user/info',
+    method: 'get',
+    response: config => {
+      return {
+        code: '200',
+        data
+      }
+    }
   }
-})
+]

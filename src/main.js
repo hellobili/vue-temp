@@ -5,7 +5,9 @@ import store from './store'
 import './components' // 全局组件组册
 
 // mock
-import './mock'
+// import './mock'
+import { mockXHR } from './mock'
+mockXHR()
 
 Vue.config.productionTip = false
 
