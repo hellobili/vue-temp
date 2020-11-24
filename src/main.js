@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import './components' // 全局组件组册
 
+// mock
+import './mock'
+
 Vue.config.productionTip = false
 
 new Vue({
