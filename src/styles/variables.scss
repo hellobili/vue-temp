@@ -1,0 +1,14 @@
+// 主题养殖变量配置
+$--color-primary: #54ddc5;
+$--color-warning: #fff;
+$--color-error: #fff;
+$--color-info: #fff;
+$--color-success: #fff;
+
+
+:export {
+  colorPrimary:$--color-primary;
+  colorWarning:$--color-warning;
+  colorError:$--color-error;
+  colorSuccess:$--color-success;
+}

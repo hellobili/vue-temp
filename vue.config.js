@@ -15,7 +15,6 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     port: port,
-    open: true,
     overlay: {
       warnings: false,
       errors: true
@@ -32,6 +31,19 @@ module.exports = {
     }
   },
   chainWebpack(config) {
+    config.plugin('preload').tap(() => [
+      {
+        rel: 'preload',
+        // to ignore runtime.js
+        // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
+        fileBlacklist: [/\.map$/, /hot-update\.js$/, /runtime\..*\.js$/],
+        include: 'initial'
+      }
+    ])
+
+    // when there are many pages, it will cause too many meaningless requests
+    config.plugins.delete('prefetch')
+
     config
       .when(process.env.NODE_ENV !== 'development',
         config => {
@@ -71,5 +83,12 @@ module.exports = {
           config.optimization.runtimeChunk('single')
         }
       )
+  },
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `@import "~@/styles/variables.scss";`
+      }
+    }
   }
 }

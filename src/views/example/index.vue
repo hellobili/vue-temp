@@ -1,7 +1,7 @@
 <template>
   <div>
     <example />
-    <div>app name:{{ appName }}</div>
+    <div class="name">app name:{{ appName }}</div>
   </div>
 </template>
 
@@ -20,6 +20,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang='scss'>
+.name{
+  color: $--color-primary;
+}
 </style>
