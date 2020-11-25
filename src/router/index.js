@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [{
+let routes = [{
   path: '/',
   name: 'Home',
   component: () => import('@/layout'),
@@ -18,7 +18,7 @@ const pages = require.context('../views', true, /router\.js$/)
 
 pages.keys().forEach(page => {
   const tmp = pages(page).default
-  routes[0].children = routes[0].children.concat(...tmp)
+  routes = routes.concat(...tmp)
 })
 
 const router = new VueRouter({
