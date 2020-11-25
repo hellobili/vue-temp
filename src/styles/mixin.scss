@@ -1,0 +1,36 @@
+// 单行溢出省略
+@mixin ellipsis {
+  overflow:hidden;
+  white-space: nowrap; 
+  text-overflow:ellipsis; 
+}
+
+// 多行溢出省略
+@mixin  ellipsis($lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-line-clamp: $lines;
+
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+// 清除浮动
+@mixin clearfix() {
+  &:before,
+  &:after {
+      content: "";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
+// 文本居中
+@mixin center($height:100%){
+  height: $height;
+  line-height: $height;
+  text-align: center
+}
