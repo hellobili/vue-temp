@@ -10,7 +10,7 @@ const mutations = {
 }
 
 const actions = {
-  getUserInfo ({ state, commit }) {
+  getUserInfo({ state, commit }) {
     user.getUserInfo().then(res => {
       console.log('userinfo', res)
       const { name } = res.data

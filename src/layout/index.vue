@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <section class="app-container--nav">
-      <nav-menu></nav-menu>
+      <nav-menu />
     </section>
     <section class="app-container--main">
-      <router-view></router-view>
+      <router-view />
     </section>
   </div>
 </template>

@@ -1,12 +1,12 @@
 <template>
   <div class="navmenu-wrapper">
-    <router-link tag="div" v-for="(item,index) in navList" :key="index" :to="item.url"> {{item.label}} </router-link>
+    <router-link v-for="(item,index) in navList" :key="index" tag="div" :to="item.url"> {{ item.label }} </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       navList: [{
         label: 'example',

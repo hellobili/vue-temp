@@ -1,7 +1,7 @@
 <template>
   <div>
     <example />
-    <div>app name:{{appName}}</div>
+    <div>app name:{{ appName }}</div>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   computed: {
     ...mapState('app', ['appName'])
   },
-  mounted () {
+  mounted() {
     this.getUserInfo()
   },
   methods: {
